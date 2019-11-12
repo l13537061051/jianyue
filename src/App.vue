@@ -1,13 +1,13 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <!-- <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
-    </div>
+    </div> -->
     <router-view/>
   </div>
 </template>
-
+<!--主题颜色#1da0ef-->
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
