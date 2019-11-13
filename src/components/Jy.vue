@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <mt-tab-container v-model="active">
+  <div class="home-page">
+    <mt-tab-container class="mt-container-wrap" v-model="active">
       <mt-tab-container-item id="home">
         <home></home>
       </mt-tab-container-item>
@@ -10,7 +10,7 @@
         <login></login>
       </mt-tab-container-item>
     </mt-tab-container>
-    <mt-tabbar fixed v-model="active">
+    <mt-tabbar class="mt-tab-wrap" v-model="active">
       <mt-tab-item id="home">
         <img slot="icon" src="../assets/shouye_no.png" alt="">
         首页
