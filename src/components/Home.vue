@@ -1,39 +1,73 @@
 <template>
   <div>
-    <mt-tab-container v-model="active">
-      <mt-tab-container-item id="home">主页组件</mt-tab-container-item>
-      <mt-tab-container-item id="list">列表/排行榜组件</mt-tab-container-item>
-      <mt-tab-container-item id="mv">MV/视频组件</mt-tab-container-item>
-      <mt-tab-container-item id="me">我的页面组件</mt-tab-container-item>
-    </mt-tab-container>
-    <mt-tabbar fixed v-model="active">
-      <mt-tab-item id="home">
-        <img slot="icon" src="../assets/shouye_no.png" alt="">
-        首页
-      </mt-tab-item>
-      <mt-tab-item id="list">
-        <img slot="icon" src="../assets/liebiao_no.png" alt="">
-        曲库
-      </mt-tab-item>
-      <mt-tab-item id="mv">
-        <img slot="icon" src="../assets/shipin_no.png" alt="">
-        视频
-      </mt-tab-item>
-      <mt-tab-item id="me">
-        <img slot="icon" src="../assets/wode_no.png" alt="">
-        我的
-      </mt-tab-item>
-
-    </mt-tabbar>
+    <searching></searching> 
+      <mt-navbar class="page-part" v-model="active">
+        <mt-tab-item id="t1">
+          <span class="set">推荐</span>
+        </mt-tab-item>
+        <mt-tab-item id="t2">
+          <span class="set">抖悦</span>
+          </mt-tab-item>
+        <mt-tab-item id="t3">
+          <span class="set">MV</span>
+          </mt-tab-item>
+      </mt-navbar>
+      <mt-tab-container v-model="active"  :swipeable='true'>
+        <mt-tab-container-item id="t1">
+            <tuijian></tuijian>
+            <item></item>
+        </mt-tab-container-item>
+        <mt-tab-container-item id="t2">
+          <mt-cell>22222</mt-cell>
+        </mt-tab-container-item>
+        <mt-tab-container-item id="t3">
+          <mt-cell>33333</mt-cell>
+        </mt-tab-container-item>
+      </mt-tab-container>
   </div>
 </template>
-
 <script>
+import Searching from "./Searching.vue"
+import Tuijian from "./Tuijian.vue"
+import Item from "./Item.vue"
 export default {
   data(){
     return {
-      active:"home"
+     active:"t1" 
     }
+  },
+  components:{
+    "searching":Searching,
+    "tuijian":Tuijian,
+    "item":Item
   }
 }
 </script>
+<style scoped>
+  .mint-navbar .mint-tab-item{
+    color:#eee;
+  }
+  .set{
+    font-size: 14px;
+    font-family: "微软雅黑";
+
+  }
+  .mint-navbar .mint-tab-item.is-selected{
+    border-bottom: 3px solid #fff;
+    color: #fff;
+    margin-bottom: 3px;
+    font-weight: 560;
+    font-size: 15px;
+  }
+  .page-part{
+    background: #1da0ef;
+    color:#fff;
+    height:40px;
+    margin-top: -3px;
+  }
+  div.mint-cell-wrapper{
+    background: #1da0ef;
+    padding: 0;
+  }
+
+</style>
