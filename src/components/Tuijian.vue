@@ -31,6 +31,7 @@ export default {
   height:120px;
   margin: 0 auto;
   align-items: center;
+  position: relative;
 }
 .ban{
   height:100%;

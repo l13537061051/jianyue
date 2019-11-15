@@ -1,15 +1,16 @@
 <template>
   <div id="search">
-    <img src="../assets/che.png" alt="">
-    <div id="searching">世间美好与你环环相扣
-      <!-- <router-link :to="search"></router-link> -->
+    <img src="../assets/che.png">
+    <div id="searching">
+      <router-link to="search" class="rlink">世间美好与你环环相扣</router-link>
     </div>
-    <img src="../assets/gengduo.png" alt="">
+    <img src="../assets/gengduo.png" style="transform:rotate(45deg);">
   </div>
 </template>
 <script>
+
 export default {
-  
+
 }
 </script>
 <style scope>
@@ -33,8 +34,11 @@ export default {
     height:23px;
     line-height: 23px;
     background: #fff;
-    color:#ccc;
     font-size: 14px;
     border-radius:11px; 
+  }
+  .rlink{
+    color:#ccc;
+    text-decoration:none;
   }
 </style>
